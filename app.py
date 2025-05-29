@@ -11,6 +11,15 @@ import json
 from gtts import gTTS
 from googletrans import Translator
 
+import paho.mqtt.client as paho
+import time
+import json
+import cv2
+import numpy as np
+#from PIL import Image
+from PIL import Image as Image, ImageOps as ImagOps
+from keras.models import load_model
+
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
     pass
