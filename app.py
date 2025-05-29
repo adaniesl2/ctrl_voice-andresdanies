@@ -32,7 +32,7 @@ def on_message(client, userdata, message):
 
 broker="157.230.214.127"
 port=1883
-client1= paho.Client("ADANIES")
+client1= paho.Client("ADANIES_casa_final")
 client1.on_message = on_message
 
 
@@ -84,7 +84,7 @@ if result:
         client1.on_publish = on_publish                            
         client1.connect(broker,port)  
         message =json.dumps({"Act1":result.get("GET_TEXT").strip()})
-        ret= client1.publish("voice_ADANIES_topic", message)
+        ret= client1.publish("Jiyan", message)
 
     
     try:
@@ -134,9 +134,9 @@ if img_file_buffer is not None:
     print(prediction)
     if prediction[0][0]>0.5:
       st.header('Abriendo')
-      client1.publish("PuertaAD","{'gesto': 'Abre'}",qos=0, retain=False)
+      client1.publish("Jiyan","{'gesto': 'Abre'}",qos=0, retain=False)
       time.sleep(0.2)
     if prediction[0][1]>0.5:
       st.header('Cerrando')
-      client1.publish("PuertaAD","{'gesto': 'Cierra'}",qos=0, retain=False)
+      client1.publish("Jiyan","{'gesto': 'Cierra'}",qos=0, retain=False)
       time.sleep(0.2)  
