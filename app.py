@@ -40,7 +40,7 @@ client1.on_message = on_message
 st.title("Bienvenido a tu Casa Inteligente")
 st.subheader("Control de Luces")
 
-image = Image.open('voice_ctrl.jpg')
+image = Image.open('voice_ctrl.jpeg')
 
 st.image(image, width=200)
 
